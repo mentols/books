@@ -1,0 +1,11 @@
+
+    <nav>
+        <p align="center">
+            <a href=" {% url 'main' %} ">Back to menu</a> |
+            <a href="https://www.astrostar.ru/horoscopes/">Source</a>
+            {% for sign in zodiac_list %}
+                | <a href="{% url 'horoskop' zodiac_name=sign %}">{{ sign|title }}</a>
+            {% endfor %}
+        </p>
+
+    </nav>

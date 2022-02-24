@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block css_additional %}<link rel="stylesheet" href="{% static '/main/css/info.css' %}">{% endblock %}
+    <meta charset="UTF-8">
+    <title>{% block tittle %} Horoscope {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <h2>Content from info zodiac</h2>
+    <h1>Приложение  гороскоп для {{ sign|upper }}</h1>
+
+    {% if description_zodiac is None %}
+        <h2>Неправильный знак зодиака: {{ sign }}</h2>
+    {% else %}
+        <p>{{ description_zodiac|safe }}</p>
+    {% endif  %}
+
+
+{% endblock %}
+</body>
+</html>

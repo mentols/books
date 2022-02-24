@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block tittle %}  {% endblock %}</title>
+    {% block css_additional %}  {% endblock %}
+</head>
+<body>
+    <h1>Base HTML</h1>
+    {% include 'includes/navbar.html' %}
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>
